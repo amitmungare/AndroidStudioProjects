@@ -1,0 +1,2 @@
+rootProject.name = "Views webinar"
+include ':app'

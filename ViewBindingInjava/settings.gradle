@@ -1,0 +1,2 @@
+rootProject.name = "View Binding In java"
+include ':app'

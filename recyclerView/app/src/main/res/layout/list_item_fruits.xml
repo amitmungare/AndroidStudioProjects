@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvfruitname"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Amit"
+        android:layout_gravity="center"
+        android:textSize="24dp"
+        android:textStyle="italic"
+        android:layout_margin="10dp"
+        android:textColor="@color/purple_500"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvorigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amit"
+            android:textSize="24dp"
+            android:textStyle="italic"
+            android:textColor="@color/purple_500"/>
+
+        <TextView
+            android:id="@+id/tvqunitity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amit"
+            android:textSize="24dp"
+            android:textStyle="italic"
+            android:textColor="@color/purple_500"/>
+
+    </LinearLayout>
+
+</LinearLayout>

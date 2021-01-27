@@ -1,0 +1,2 @@
+rootProject.name = "My Addition App"
+include ':app'

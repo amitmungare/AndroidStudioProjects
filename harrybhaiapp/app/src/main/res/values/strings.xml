@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">harrybhaiapp</string>
+    <string name="send">send</string>
+    <string name="review">review</string>
+    <string name="delete">delete</string>
+</resources>
