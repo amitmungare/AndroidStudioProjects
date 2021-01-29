@@ -33,19 +33,3 @@ class FruitsAdapter(
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

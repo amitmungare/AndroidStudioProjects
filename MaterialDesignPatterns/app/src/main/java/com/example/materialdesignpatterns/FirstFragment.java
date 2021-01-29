@@ -16,7 +16,8 @@ private FragmentFirstBinding binding;
 
     @Override
     public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
+            LayoutInflater inflater,
+            ViewGroup container,
             Bundle savedInstanceState
     ) {
 
