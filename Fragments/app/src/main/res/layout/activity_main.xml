@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--        <include layout="@layout/fragments"/>-->
+
+        <fragment
+            tools:layout="@layout/fragment_count_up"
+            android:name="com.example.fragments.CountUpFragment"
+            android:id="@+id/frag1"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+
+        <fragment
+            tools:layout="@layout/fragment_count_down"
+            android:name="com.example.fragments.CountDownFragment"
+            android:id="@+id/frag2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+
+</LinearLayout>
+
