@@ -18,10 +18,11 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        val name: String= arguments?.getString("KEY")?:"default"
+        tvfirst.text =name
 
         btnfirst.setOnClickListener {
-            Toast.makeText(requireContext(),"hello ",Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"hello $name",Toast.LENGTH_SHORT).show()
         }
 
     }
