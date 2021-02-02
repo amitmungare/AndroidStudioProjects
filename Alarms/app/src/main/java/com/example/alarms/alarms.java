@@ -25,10 +25,12 @@ public class alarms extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i =new Intent(getBaseContext(),MainActivity.class);
-                PendingIntent pi = PendingIntent.getActivity(getBaseContext(),1234,i,PendingIntent.FLAG_ONE_SHOT);
+                PendingIntent pi = PendingIntent.getActivity(getBaseContext(),1234,i,PendingIntent.FLAG_UPDATE_CURRENT);
 
                 AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
                 am.set(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime()+6000,pi);
+
+                am.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime()+6000,6000,pi);
 
             }
         });

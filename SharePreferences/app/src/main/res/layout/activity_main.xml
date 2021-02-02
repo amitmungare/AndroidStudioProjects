@@ -3,36 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".dataStorageInKotlin">
-
-    <EditText
-        android:id="@+id/ettext"
-        android:padding="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter text" />
+    android:id="@+id/llbackground"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnwrite"
-        android:padding="15dp"
+        android:id="@+id/btnred"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="write" />
+        android:text="red"
+        android:padding="15dp"/>
 
     <Button
-        android:id="@+id/btnread"
-        android:padding="15dp"
+        android:id="@+id/btnblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="read" />
+        android:text="blue"
+        android:padding="15dp"/>
 
-    <TextView
-        android:id="@+id/tvtext"
+    <Button
+        android:id="@+id/btngreen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="text"
-        android:textSize="20sp"/>
+        android:layout_height="wrap_content"
+        android:text="green"
+        android:padding="15dp"/>
+
 
 </LinearLayout>

@@ -4,26 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".dataStorageInKotlin">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/ettext"
-        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter text" />
 
     <Button
         android:id="@+id/btnwrite"
-        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="write" />
 
     <Button
         android:id="@+id/btnread"
-        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="read" />
@@ -33,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="text"
-        android:textSize="20sp"/>
+        android:textSize="18sp"/>
+
 
 </LinearLayout>
