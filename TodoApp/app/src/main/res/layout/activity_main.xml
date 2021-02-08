@@ -8,17 +8,22 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        app:titleTextColor="@android:color/white"
         app:title="Todo"
         android:background="?attr/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/toolbar"
         android:id="@+id/todorv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="1dp"
+        android:padding="8dp"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_todo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -27,6 +32,7 @@
         android:layout_margin="32dp"
         android:src="@drawable/addtodpicon"
         android:layout_alignParentEnd="true"
+        android:onClick="openNewTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
