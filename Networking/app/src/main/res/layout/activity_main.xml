@@ -22,18 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUser"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/tvdata"
-        android:text="text"
-        android:textColor="#2AF179"
-        android:textSize="16sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    </ScrollView>
 
 </LinearLayout>
