@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +23,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +56,35 @@ public class MainActivity extends AppCompatActivity {
 //        networkTask.execute("https://www."+edtext.getText().toString()+".com");
         networkTask.execute("https://api.github.com/search/users?q="+edtext.getText().toString());
 
+    }
+
+    void makeNetworkCall(String url) throws  IOException{
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder().url(url).build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+//                toast
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+
+                String result = response.body().string();
+                ArrayList<GithubUser> users = parseJson(result);
+                final GithubUsersAdapter githubUsersAdapter = new GithubUsersAdapter(users);
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        RecyclerView recyclerView = findViewById(R.id.rvUser);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+                        recyclerView.setAdapter(githubUsersAdapter);
+                    }
+                });
+            }
+        });
     }
 
     class NetworkTask extends AsyncTask<String,Void,String>{
