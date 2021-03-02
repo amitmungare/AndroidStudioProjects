@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_row.view.*
 
 class GithubUsersAdapter(private val githubUser: ArrayList<GithubUser>):RecyclerView.Adapter<GithubUsersAdapter.GithubViewHolder>(){
@@ -24,6 +25,9 @@ class GithubUsersAdapter(private val githubUser: ArrayList<GithubUser>):Recycler
             itemView?.tvlogin?.text = githubUser.login
             itemView?.tvScore?.text = githubUser.score.toString()
             itemView?.tvUrl?.text = githubUser.html_url
+
+            Picasso.get().load(githubUser.avater_url).into(itemView?.imageViewProfile);
+
         }
     }
 

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -73,8 +75,12 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
 
                 String result = response.body().string();
-                ArrayList<GithubUser> users = parseJson(result);
-                final GithubUsersAdapter githubUsersAdapter = new GithubUsersAdapter(users);
+//                ArrayList<GithubUser> users = parseJson(result);
+
+                Gson gson = new Gson();
+                ApiResult apiResult = gson.fromJson(result, ApiResult.class);
+
+                final GithubUsersAdapter githubUsersAdapter = new GithubUsersAdapter(apiResult.getItems());
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -138,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             JSONArray items = root.getJSONArray("items");
 
             for (int i=0;i< items.length();i++){
+
                 JSONObject object = items.getJSONObject(i);
                 String login = object.getString("login");
                 Integer id = object.getInt("id");
@@ -153,5 +160,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return  githubUsers;
+
     }
 }
