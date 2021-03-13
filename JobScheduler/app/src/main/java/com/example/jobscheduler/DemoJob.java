@@ -9,7 +9,7 @@ public class DemoJob extends JobService {
     @Override
     public boolean onStartJob(JobParameters params) {
 
-        Toast.makeText(this, "job done", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "JobScheduler working", Toast.LENGTH_SHORT).show();
 
         return false;
     }
